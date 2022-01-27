@@ -1,4 +1,16 @@
-## Welcome to GitHub Pages
+## Welcome to git learning record
+
+Git 不仅仅是简单的复制粘贴，他保存了提交的历史记录，这也是为什么大多数提交记录的上面都有父节点的原因
+
+具体指令：
+
+git commit 生成新的节点并保存父节点
+
+早建分支！多用分支！
+
+git branch XX 用于在当前节点建立分支XX
+
+git checkout XX  用于切换分支到XX
 
 You can use the [editor on GitHub](https://github.com/NoMoreHesitation/NoMoreHesitation.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
