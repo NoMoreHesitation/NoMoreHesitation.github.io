@@ -178,3 +178,4 @@ git checkout main^  一个^ 符号表示向父辈移动一位
 git revert 共享撤销操作
 
 git rebase -i 从新的图窗人工具体操作
+# 详细可见：https://www.progit.cn/#_pro_git
