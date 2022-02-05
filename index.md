@@ -137,26 +137,44 @@ master修复的bug应用于aaa分支
 git checkout aaa
 
 git cherry-pick 改动对应的id
+## 删除一个尚未合并的分支
 
+git branch -D aaa
+## 多人协作冲突问题
+因此，多人协作的工作模式通常是这样：
 
+首先，可以试图用git push origin <branch-name>推送自己的修改；
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+
+如果合并有冲突，则解决冲突，并在本地提交；
+
+没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
+  
+# 打标签
+## 1.HEAD打上标签
+  git tag v1.0(打上v1.0标签)
+## 2.特定commit打上标签
+  git tag -a v1.0 -m '信息' commitid前五位
+## 3.查看所有标签
+  git tag
+  
+  git tag -d v1.0(删除标签)
+## 4.远程推送标签
+  git push origin --tags(所有)
+  
+  git show v1.0（具体标签的信息）
 # 其他指令
-git branch XX 用于在当前节点建立分支XX
+git log --graph --pretty=oneline --abbrev-commit 可看详细记录
 
-git checkout XX  用于切换分支到XX
-
-git merge 用于合并两个分支
+vi .py 查看当前工作区修改记录，用于解决冲突
 
 git rebase 也用于合并，“线性”合并分支
 
-git checkout 直接引用
-HEAD 是一个对当前检出记录的符号引用
-
 git checkout main^  一个^ 符号表示向父辈移动一位
 
-git reset 本地撤销操作
-
 git revert 共享撤销操作
-
-git cherry-pick 需要复制的节点到当前节点
 
 git rebase -i 从新的图窗人工具体操作
