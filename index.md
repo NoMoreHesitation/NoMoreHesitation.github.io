@@ -33,9 +33,13 @@ git diff可以知道到底改了什么
 
 git log 用来查看所有信息，commitid很重要，尤其前五位
 
-当前版本为HEAD，返回上一个版本：git reset --hard HEAD^
+当前版本为HEAD，返回上一个版本：
 
-再要返回当前版本：git reset --hard 1111a(id前五位)
+git reset --hard HEAD^
+
+再要返回当前版本：
+
+git reset --hard 1111a(id前五位)
 
 万一关闭了窗口，可以用：git reflog 记录每一次操作
 ## 5.撤销修改
