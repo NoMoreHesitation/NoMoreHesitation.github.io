@@ -71,6 +71,12 @@ git branch -M main(本地建立分支库)
 git push -u origin main 第一次输送到github
 
 git push origin main 后面几次
+### README文本已经创建
+建立main分支后：
+
+git pull --rebase origin main
+
+git push origin main
 # 其他指令
 git branch XX 用于在当前节点建立分支XX
 
