@@ -8,6 +8,7 @@ Git 当前最强大的分布式版本控制系统
 ## 1.首先得自报家门
 
 git config --global user.name "Your Name"
+
 git config --global user.email "email@example.com"
 ## 2.其次得有仓库（repository），有两种
 自己找个文件夹建立仓库：
