@@ -43,10 +43,13 @@ git log 用来查看所有信息，commitid很重要，尤其前五位
 git restore .py
 ### 2 工作区修改了而且add了
 git reset HEAD .py
+
 git restore .py
 ## 6 删除与恢复
 git rm .py
+
 误删修复：
+
 git checkout --  .py(只要库里添加提交过了)
 
 
@@ -66,9 +69,9 @@ git remote add origin git@github.com:NoMoreHesitation/learngitsecond.git（SSH�
 
 完成之后，即可用指令：
 
-git branch -M main(本地建立分支库)
+git branch -M main(本地建立分支库main)
 
-git push -u origin main 第一次输送到github
+git push -u origin main 第一次输送到github(origin名字是规范，也可以换名字)
 
 git push origin main 后面几次
 ### README文本已经创建
@@ -77,6 +80,65 @@ git push origin main 后面几次
 git pull --rebase origin main
 
 git push origin main
+# 从远程库克隆
+选择一个文件夹：
+git clone git@github.com:NoMoreHesitation/learngitsecond.git
+# 早建分支，早用分支
+## 1.为何建立分支
+主线任务可以先停滞，但时间不等人，可以先开支线任务，最后合并在一起，删掉支线任务，经验还是不落下！
+## 2.建立分支
+创建加切换：如果master是空的，则会删除master
+最新版本：
+git switch -c aaa
+
+老版本：
+git checkout -b aaa(创建并转到aaa分支，不再是master，HEAD指向aaa)
+相当于：
+
+git branch aaa
+
+git checkout aaa
+
+## 3.查看分支
+
+git branch
+
+## 4.正常添加提交后,合并任务，增加经验：
+
+git checkout master
+
+git merge aaa
+## 5.删除分支
+git branch -d aaa 
+# 团队协作
+![image](https://user-images.githubusercontent.com/96240580/152651767-f6a49bb7-32ea-43ac-848f-bd6bc0f5b7ca.png)
+## master主分支不要动，每个人在自己的分支干活
+## 两种合并方法：
+### 1.fastforward:
+git merge dev
+
+![image](https://user-images.githubusercontent.com/96240580/152651870-db544e90-ddde-41db-bcfe-f96a74dc2a6a.png)
+
+### 2.禁用ff方法，可以看分支历史
+git merge --no-ff -m 'merge with no-ff' dev
+
+![image](https://user-images.githubusercontent.com/96240580/152651904-30d4e52c-3886-4597-b35b-5cd645f2cdf3.png)
+
+## 工作区消失术（修复bug）
+
+git stash
+
+建立分支修复bug，然后add commit，删除分支
+
+git stash pop
+
+master修复的bug应用于aaa分支
+
+git checkout aaa
+
+git cherry-pick 改动对应的id
+
+
 # 其他指令
 git branch XX 用于在当前节点建立分支XX
 
