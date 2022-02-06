@@ -117,6 +117,18 @@ git branch -d aaa
 # 团队协作
 ![image](https://user-images.githubusercontent.com/96240580/152651767-f6a49bb7-32ea-43ac-848f-bd6bc0f5b7ca.png)
 ## master主分支不要动，每个人在自己的分支干活
+## 1.克隆或者拉取
+git clone ssh
+
+git pull origin  远程分支：本地分支（git fetch+git merge）
+## 2.克隆时只有main分支
+git checkout -b dev origin/dev 
+
+把远端的dev分支跟本地建立联系
+
+## 3.本地修改上传
+git push
+
 ## 两种合并方法：
 ### 1.fastforward:
 git merge dev
@@ -145,7 +157,7 @@ git cherry-pick 改动对应的id
 
 git branch -D aaa
 ## 多人协作冲突问题
-因此，多人协作的工作模式通常是这样：
+多人协作的工作模式通常是这样：
 
 首先，可以试图用git push origin <branch-name>推送自己的修改；
 
