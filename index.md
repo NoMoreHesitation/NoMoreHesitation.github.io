@@ -120,6 +120,8 @@ git branch -d aaa
 ## 1.克隆或者拉取
 git clone ssh
 
+此时调取git log只能看到部分分支，因为窗口太小，可以按回车或者END
+
 git pull origin  远程分支：本地分支（git fetch+git merge）
 ## 2.克隆时只有main分支
 git checkout -b dev origin/dev 
