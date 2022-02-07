@@ -129,6 +129,11 @@ git checkout -b dev origin/dev
 ## 3.本地修改上传
 git push
 
+## 4.删除远程分支
+git push origin --delete dev
+
+git branch -d dev(删除本地分支dev)
+
 ## 两种合并方法：
 ### 1.fastforward:
 git merge dev
